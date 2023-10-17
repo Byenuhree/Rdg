@@ -1,0 +1,362 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: rgb(38, 51, 11);
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background-color: skyblue; */
+}
+section::after {
+  content: "";
+  position: absolute;
+  top: 10;
+  left: 0;
+  width: 50%;
+  height: 90%;
+  /* background: rgb(114, 139, 252); */
+}
+.container h1 {
+  /* border: 1px solid red; */
+  padding-top: 3px;
+  margin-left: 30px;
+  font-size: 25px;
+  cursor: pointer;
+  font-family: monospace;
+}
+.wave {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: 0;
+  left: 12%;
+  /* transform-origin: top left;  */
+  transform: rotate(0deg) scaleY(1);
+  animation: kaway 2s linear infinite;
+}
+@keyframes kaway {
+  10% {
+    transform: rotate(10deg) scaleX(1);
+  }
+  20% {
+    transform: rotate(20deg) scaleY(1);
+  }
+  30% {
+    transform: rotate(30deg) scaleY(1);
+  }
+}
+
+.container {
+  position: relative;
+  min-width: 950px;
+  min-height: 550px;
+  display: flex;
+  z-index: 3;
+  /* background: rgb(160, 26, 26); */
+  /* border: 1px solid red; */
+}
+
+/* .contact-info{
+    border: 1px solid rgb(17, 0, 255);
+
+} */
+
+.contact-info {
+  position: absolute;
+  top: 40px;
+  width: 350px;
+  height: calc(100% - 80px);
+  background-color: rgb(36, 110, 26);
+  z-index: 1;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 25px rgb(133, 130, 130);
+}
+/* strong{
+    color: #222;
+    font-weight: 700 ;
+} */
+.contact-info h2 {
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: 500;
+  /* border: 1px solid red; */
+  text-align: center;
+}
+
+.paragraph {
+  /* border: 1px solid red; */
+  font-size: 14px;
+  font-weight: 400;
+
+  color: whitesmoke;
+}
+
+.method-1 {
+  cursor: pointer;
+}
+
+.method-1 p {
+  color: whitesmoke;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.method-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid green; */
+}
+
+.socials {
+  display: grid;
+  place-items: space-around;
+  grid-template-columns: repeat(3, 1fr);
+  width: 10vw;
+  margin: 50px auto;
+  /* border: 1px solid red; */
+}
+
+.button {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 8px;
+  background-color: rgb(36, 110, 26);
+  /* outline: 1px #1f1e1e solid; */
+  outline-offset: -3px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+  color: whitesmoke;
+  font-size: 20px;
+}
+
+.button:hover {
+  /* background-color: rgb(117, 175, 29); */
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container .contact-form {
+  position: absolute;
+  padding: 70px 50px;
+  padding-left: 250px;
+  margin-left: 150px;
+  width: calc(100% - 150px);
+  height: 100%;
+  background: rgb(254, 255, 254);
+  box-shadow: 0 20px 25px gray;
+}
+
+.container .contact-form h2 {
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.container .contact-form .formBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.container .contact-form .formBox .inputbox {
+  position: relative;
+  margin-bottom: 35px;
+}
+.container .contact-form .formBox .inputbox.w50 {
+  width: 47%;
+}
+.container .contact-form .formBox .inputbox.w100 {
+  width: 100%;
+}
+.container .contact-form .formBox .inputbox input,
+.container .contact-form .formBox .inputbox textarea {
+  width: 100%;
+  resize: none;
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #222;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+}
+
+.container .contact-form .formBox .inputbox textarea {
+  height: 120px;
+}
+.container .contact-form .formBox .inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  pointer-events: none;
+  font-size: 14px;
+  font-weight: 300;
+  transition: 0.3s;
+  color: black;
+}
+
+.container .contact-form .formBox .inputbox input:focus ~ span,
+.container .contact-form .formBox .inputbox input:valid ~ span,
+.container .contact-form .formBox .inputbox textarea:focus ~ span,
+.container .contact-form .formBox .inputbox textarea:valid ~ span {
+  transform: translateY(-20px);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgb(50, 167, 35);
+}
+
+/* .container .contact-form .formBox .inputbox input[type="submit"]{
+    position: relative;
+    cursor: pointer;
+    background: rgb(50, 167, 35);
+    color: white;
+    border: none;
+    max-width: 150px;
+    padding: 12px;
+}
+.container .contact-form .formBox .inputbox input[type="submit"]:hover{
+    background-color: black;
+
+} */
+
+.button1 {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  transition: all 0.15s ease;
+}
+
+.button1::before,
+.button1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7d8082;
+  transition: all 0.15s ease;
+}
+
+.button1::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button1::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button1:active,
+.button1:focus {
+  outline: none;
+}
+
+.button1:active::before,
+.button1:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button1:active::before {
+  top: 3px;
+}
+
+.button1:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all 0.2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: rgb(117, 175, 29);
+  transform: skew(-15deg);
+  transition: all 0.2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button1:hover {
+  color: #0f1923;
+}
+
+.button1:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button1:hover .button_lg::after {
+  background-color: #fff;
+}
